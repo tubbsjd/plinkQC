@@ -395,7 +395,7 @@ check_snp_missingness <- function(indir, name, qcdir=indir, lmissTh=0.01,
         suffix <- ".no_failIDs"
         sys::exec_wait(path2plink,
                        args=c("--bfile", prefix, "--remove", removeIDs_file,
-                              "--freq", "--out", paste(out, suffix, sep=""),
+                              "--missing", "--freq", "--out", paste(out, suffix, sep=""),
                               args_filter),
                        std_out=showPlinkOutput, std_err=showPlinkOutput)
     }
